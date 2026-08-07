@@ -33,10 +33,10 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     
     <!-- Estilos customizados e animações -->
-    <link rel="stylesheet" href="/estilos.css">
+    <link rel="stylesheet" href="./estilos.css">
     
     <!-- JavaScript comportamental -->
-    <script src="/script.js" defer></script>
+    <script src="./script.js" defer></script>
   </head>
   <body class="bg-neutral-950 text-neutral-300 antialiased selection:bg-orange-500 selection:text-neutral-950">
     
@@ -99,8 +99,8 @@
             href="#top-rush" 
             class="group p-5 rounded-2xl bg-neutral-900/60 border border-neutral-800/80 hover:border-orange-500/40 transition-all duration-300 flex items-start gap-4"
           >
-            <div class="w-12 h-12 rounded-xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center text-orange-400 shrink-0 group-hover:scale-110 transition-transform">
-              <i data-lucide="gamepad-2" class="w-6 h-6"></i>
+            <div class="w-12 h-12 rounded-xl bg-neutral-950 border border-neutral-800 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform overflow-hidden">
+              <img src="./assets/icone_top_rush_car.jpg" alt="Top Rush Car Icon" class="w-full h-full object-cover rounded-xl scale-[1.08]" referrerpolicy="no-referrer">
             </div>
             <div class="flex-1 min-w-0">
               <div class="flex items-center justify-between mb-1">
@@ -114,11 +114,11 @@
           </a>
 
           <a 
-            href="#plantei-ativos" 
+            href="#detalhes-plantei" 
             class="group p-5 rounded-2xl bg-neutral-900/60 border border-neutral-800/80 hover:border-orange-500/40 transition-all duration-300 flex items-start gap-4"
           >
-            <div class="w-12 h-12 rounded-xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center text-orange-400 shrink-0 group-hover:scale-110 transition-transform">
-              <i data-lucide="trending-up" class="w-6 h-6"></i>
+            <div class="w-12 h-12 rounded-xl bg-neutral-950 border border-neutral-800 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform overflow-hidden">
+              <img src="./assets/icone_plantei.jpg" alt="Plantei Ativos Icon" class="w-full h-full object-cover rounded-xl" referrerpolicy="no-referrer">
             </div>
             <div class="flex-1 min-w-0">
               <div class="flex items-center justify-between mb-1">
@@ -153,7 +153,10 @@
         <div class="grid md:grid-cols-2 gap-8">
           
           <!-- Card de Projeto: Top Rush Car -->
-          <div id="top-rush" class="bg-neutral-900/90 border border-neutral-800/90 rounded-2xl p-6 transition-all duration-300 hover:border-orange-500/50 hover:bg-neutral-900 group orange-glow-hover flex flex-col justify-between scroll-mt-24">
+          <div 
+            id="top-rush" 
+            class="bg-neutral-900/90 border border-neutral-800/90 rounded-2xl p-6 transition-all duration-300 hover:border-orange-500/50 hover:bg-neutral-900 group orange-glow-hover flex flex-col justify-between scroll-mt-24 text-left cursor-pointer"
+          >
             <div>
               <!-- Bloco Visual/Preview (Vídeo de Gameplay em loop) -->
               <div class="w-full h-52 rounded-xl bg-gradient-to-br from-neutral-950 to-neutral-900 border border-neutral-800 p-4 mb-6 flex flex-col justify-between relative overflow-hidden group-hover:border-neutral-700 transition-colors">
@@ -162,7 +165,7 @@
                   <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/20 to-neutral-950/40 z-10 pointer-events-none"></div>
                   <!-- Vídeo em Loop -->
                   <video 
-                    src="https://assets.mixkit.co/videos/preview/mixkit-polygon-wireframe-grid-tunnel-31518-large.mp4"
+                    src="./assets/preview_top_rush_car.mp4"
                     autoplay
                     loop
                     muted
@@ -176,8 +179,8 @@
                   <span class="text-xs font-semibold px-2.5 py-1 rounded-md bg-neutral-950/90 border border-orange-500/20 text-orange-400 backdrop-blur-sm">
                     Jogo de Corrida Web
                   </span>
-                  <div class="w-9 h-9 rounded-lg bg-neutral-950/90 border border-neutral-800 flex items-center justify-center text-orange-400 group-hover:scale-110 transition-transform backdrop-blur-sm">
-                    <i data-lucide="gamepad-2" class="w-5 h-5"></i>
+                  <div class="w-9 h-9 rounded-lg bg-neutral-950/90 border border-neutral-800 flex items-center justify-center group-hover:scale-110 transition-transform backdrop-blur-sm overflow-hidden">
+                    <img src="./assets/icone_top_rush_car.jpg" alt="Top Rush Car Icon" class="w-full h-full object-cover rounded-lg scale-[1.08]" referrerpolicy="no-referrer">
                   </div>
                 </div>
 
@@ -215,18 +218,34 @@
               </div>
             </div>
 
-            <a 
-              href="https://top-rush-car.vercel.app/" 
-              target="_blank"
-              rel="noopener noreferrer"
-              class="w-full py-3 bg-neutral-950 border border-neutral-800 hover:border-orange-500/40 text-neutral-300 hover:text-white rounded-xl text-center font-semibold text-sm transition-all duration-300 block"
-            >
-              Jogar na Web (Vercel)
-            </a>
+            <div class="flex flex-col sm:flex-row gap-3 w-full mt-2 relative z-10">
+              <button 
+                id="btn-jogar-aqui"
+                class="flex-1 inline-flex items-center justify-center gap-2 py-3 px-4 bg-orange-500 hover:bg-orange-600 text-white rounded-xl font-bold text-sm transition-all duration-300 cursor-pointer shadow-lg shadow-orange-500/10 hover:shadow-orange-500/20"
+              >
+                <i data-lucide="play" class="w-4 h-4 fill-current"></i>
+                <span>Jogar Aqui</span>
+              </button>
+              
+              <a 
+                id="btn-abrir-nova-guia"
+                href="https://top-rush-car.vercel.app/" 
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex-1 inline-flex items-center justify-center gap-2 py-3 px-4 bg-neutral-950 hover:bg-neutral-900 border border-neutral-800 hover:border-neutral-700 text-neutral-300 hover:text-white rounded-xl font-semibold text-sm transition-all duration-300 cursor-pointer"
+              >
+                <i data-lucide="external-link" class="w-4 h-4"></i>
+                <span>Abrir Nova Guia</span>
+              </a>
+            </div>
           </div>
 
           <!-- Card de Projeto: Plantei Ativos -->
-          <div id="plantei-ativos" class="bg-neutral-900/90 border border-neutral-800/90 rounded-2xl p-6 transition-all duration-300 hover:border-orange-500/50 hover:bg-neutral-900 group orange-glow-hover flex flex-col justify-between scroll-mt-24">
+          <a 
+            id="plantei-ativos" 
+            href="#detalhes-plantei" 
+            class="bg-neutral-900/90 border border-neutral-800/90 rounded-2xl p-6 transition-all duration-300 hover:border-orange-500/50 hover:bg-neutral-900 group orange-glow-hover flex flex-col justify-between scroll-mt-24 cursor-pointer text-left"
+          >
             <div>
               <!-- Bloco Visual/Preview (Mockup de smartphone com screenshot) -->
               <div class="w-full h-52 rounded-xl bg-gradient-to-br from-neutral-950 to-neutral-900 border border-neutral-800 p-4 mb-6 flex flex-col justify-between relative overflow-hidden group-hover:border-neutral-700 transition-colors">
@@ -241,7 +260,7 @@
                     
                     <!-- Print do App -->
                     <img 
-                      src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&w=300&q=80" 
+                      src="./assets/preview_plantei.jpg" 
                       alt="Screenshot de Plantei Ativos"
                       referrerpolicy="no-referrer"
                       class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300"
@@ -254,8 +273,8 @@
                   <span class="text-xs font-semibold px-2.5 py-1 rounded-md bg-neutral-950/90 border border-orange-500/20 text-orange-400 backdrop-blur-sm">
                     Finanças & Investimentos
                   </span>
-                  <div class="w-9 h-9 rounded-lg bg-neutral-950/90 border border-neutral-800 flex items-center justify-center text-orange-400 group-hover:scale-110 transition-transform backdrop-blur-sm">
-                    <i data-lucide="trending-up" class="w-5 h-5"></i>
+                  <div class="w-9 h-9 rounded-lg bg-neutral-950/90 border border-neutral-800 flex items-center justify-center group-hover:scale-110 transition-transform backdrop-blur-sm overflow-hidden">
+                    <img src="./assets/icone_plantei.jpg" alt="Plantei Ativos Icon" class="w-full h-full object-cover rounded-lg" referrerpolicy="no-referrer">
                   </div>
                 </div>
 
@@ -293,13 +312,12 @@
               </div>
             </div>
 
-            <a 
-              href="#contato" 
-              class="w-full py-3 bg-neutral-950 border border-neutral-800 hover:border-orange-500/40 text-neutral-300 hover:text-white rounded-xl text-center font-semibold text-sm transition-all duration-300"
+            <div 
+              class="w-full py-3 bg-neutral-950 border border-neutral-800 group-hover:border-orange-500/40 text-neutral-300 group-hover:text-white rounded-xl text-center font-semibold text-sm transition-all duration-300"
             >
-              Conhecer App Mobile
-            </a>
-          </div>
+              Conhecer Detalhes & Telas
+            </div>
+          </a>
 
         </div>
       </div>
@@ -416,6 +434,485 @@
         </div>
       </div>
     </section>
+
+    <!-- ==================== DETALHES DO PLANTEI ATIVOS (SPA OVERLAY) ==================== -->
+    <div 
+      id="detalhes-plantei" 
+      class="fixed inset-0 bg-neutral-950 z-[100] overflow-y-auto hidden transform translate-y-full transition-all duration-500 ease-out flex flex-col"
+    >
+      <!-- Header Fixo da Seção -->
+      <header class="sticky top-0 w-full bg-neutral-950/90 backdrop-blur-md border-b border-neutral-900/80 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+          <button 
+            id="btn-voltar-detalhes" 
+            class="inline-flex items-center gap-2 text-neutral-400 hover:text-orange-500 transition-colors font-semibold text-sm cursor-pointer"
+          >
+            <i data-lucide="arrow-left" class="w-5 h-5"></i>
+            <span>Voltar ao Portfólio</span>
+          </button>
+          
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-lg border border-neutral-800 overflow-hidden shrink-0">
+              <img src="./assets/icone_plantei.jpg" alt="Plantei Ativos" class="w-full h-full object-cover" referrerpolicy="no-referrer">
+            </div>
+            <span class="text-white font-bold text-base tracking-tight hidden sm:inline">Plantei Ativos</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- Conteúdo Principal dos Detalhes -->
+      <main class="flex-1 max-w-7xl mx-auto px-6 py-12 w-full">
+        
+        <!-- Apresentação Hero -->
+        <div class="grid lg:grid-cols-12 gap-12 items-center mb-20">
+          
+          <!-- Lado Esquerdo: Texto de Destaque -->
+          <div class="lg:col-span-7 flex flex-col gap-6">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-400 text-xs font-semibold self-start">
+              <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+              <span>Novo Aplicativo Finanças</span>
+            </div>
+            
+            <h1 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight">
+              Cultive sua saúde financeira com simplicidade.
+            </h1>
+            
+            <p class="text-neutral-300 text-base sm:text-lg leading-relaxed font-light">
+              O <strong class="text-white font-medium">Plantei Ativos</strong> foi desenvolvido para investidores de todos os níveis que desejam acompanhar o crescimento de suas carteiras sem complicações. Registre ações, fundos imobiliários, renda fixa e criptoativos com uma interface minimalista pensada exclusivamente para dispositivos móveis.
+            </p>
+
+            <p class="text-neutral-400 text-sm leading-relaxed">
+              Priorizando a <span class="text-orange-400">segurança e a privacidade</span>, o aplicativo funciona de forma local (Offline-First), o que significa que nenhum dado confidencial ou transação financeira sai do seu celular. Além disso, o aplicativo é totalmente limpo, livre de anúncios irritantes ou vendas de dados.
+            </p>
+
+            <!-- Ações principais -->
+            <div class="flex flex-col sm:flex-row gap-4 mt-4">
+              <!-- Play Store CTA Oficial -->
+              <a 
+                href="https://play.google.com/apps/test/com.planteiativos.app/1" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-3 bg-neutral-900 hover:bg-neutral-850 border border-neutral-800 hover:border-orange-500/40 text-white px-5 py-3 rounded-xl transition-all duration-300 group"
+              >
+                <div class="w-8 h-8 rounded-lg bg-neutral-950 flex items-center justify-center text-orange-500 group-hover:scale-110 transition-transform">
+                  <i data-lucide="play" class="w-5 h-5 fill-current"></i>
+                </div>
+                <div class="text-left">
+                  <p class="text-[10px] uppercase tracking-wider text-neutral-400 font-semibold">Acesso de Teste</p>
+                  <p class="text-sm font-bold text-white">Google Play Store</p>
+                </div>
+              </a>
+
+              <!-- Botão Ir para Termos de Responsabilidade -->
+              <a 
+                href="#termos-legais" 
+                id="btn-go-to-terms"
+                class="inline-flex items-center justify-center gap-2 bg-neutral-950 border border-neutral-800 hover:border-orange-500/40 text-neutral-300 hover:text-white px-6 py-3.5 rounded-xl text-sm font-semibold transition-all duration-300"
+              >
+                <i data-lucide="file-text" class="w-4.5 h-4.5"></i>
+                <span>Termos de Responsabilidade</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Lado Direito: Preview Mockup Elevado -->
+          <div class="lg:col-span-5 flex justify-center">
+            <div class="w-[280px] h-[560px] rounded-[48px] border-[10px] border-neutral-900 bg-neutral-950 shadow-2xl relative overflow-hidden flex flex-col ring-1 ring-neutral-800 group/phone">
+              <!-- Notch da Câmera -->
+              <div class="absolute top-4 left-1/2 -translate-x-1/2 w-28 h-6 bg-neutral-900 rounded-full z-25 flex items-center justify-center">
+                <span class="w-2.5 h-2.5 rounded-full bg-neutral-950"></span>
+              </div>
+              
+              <!-- Slides do Carrossel (Pilha Absoluta) -->
+              <div class="relative flex-1 w-full h-full overflow-hidden">
+                <!-- Slide 1: Início -->
+                <div class="phone-slide absolute inset-0 w-full h-full transition-opacity duration-500 ease-in-out opacity-100 z-10" data-index="0">
+                  <img src="./assets/plantei_1.jpg" alt="Plantei Ativos - Início" class="w-full h-full object-cover" referrerpolicy="no-referrer">
+                </div>
+                <!-- Slide 2: Ativos -->
+                <div class="phone-slide absolute inset-0 w-full h-full transition-opacity duration-500 ease-in-out opacity-0 z-0" data-index="1">
+                  <img src="./assets/plantei_2.jpg" alt="Plantei Ativos - Ativos" class="w-full h-full object-cover" referrerpolicy="no-referrer">
+                </div>
+                <!-- Slide 3: Metas -->
+                <div class="phone-slide absolute inset-0 w-full h-full transition-opacity duration-500 ease-in-out opacity-0 z-0" data-index="2">
+                  <img src="./assets/plantei_3.jpg" alt="Plantei Ativos - Metas" class="w-full h-full object-cover" referrerpolicy="no-referrer">
+                </div>
+                <!-- Slide 4: Alertas -->
+                <div class="phone-slide absolute inset-0 w-full h-full transition-opacity duration-500 ease-in-out opacity-0 z-0" data-index="3">
+                  <img src="./assets/plantei_4.jpg" alt="Plantei Ativos - Alertas" class="w-full h-full object-cover" referrerpolicy="no-referrer">
+                </div>
+                <!-- Slide 5: Configurações -->
+                <div class="phone-slide absolute inset-0 w-full h-full transition-opacity duration-500 ease-in-out opacity-0 z-0" data-index="4">
+                  <img src="./assets/plantei_5.jpg" alt="Plantei Ativos - Configurações" class="w-full h-full object-cover" referrerpolicy="no-referrer">
+                </div>
+              </div>
+
+              <!-- Controles de Navegação (Setas) -->
+              <button 
+                id="phone-prev-btn" 
+                class="absolute left-3 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-neutral-950/80 border border-neutral-800 text-white flex items-center justify-center opacity-0 group-hover/phone:opacity-100 transition-all duration-300 z-30 hover:bg-orange-500 hover:border-orange-400 cursor-pointer"
+                aria-label="Slide anterior"
+              >
+                <i data-lucide="chevron-left" class="w-5 h-5"></i>
+              </button>
+              
+              <button 
+                id="phone-next-btn" 
+                class="absolute right-3 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-neutral-950/80 border border-neutral-800 text-white flex items-center justify-center opacity-0 group-hover/phone:opacity-100 transition-all duration-300 z-30 hover:bg-orange-500 hover:border-orange-400 cursor-pointer"
+                aria-label="Próximo slide"
+              >
+                <i data-lucide="chevron-right" class="w-5 h-5"></i>
+              </button>
+
+              <!-- Indicadores (Pontos) -->
+              <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5 z-30 bg-neutral-950/60 px-3 py-1.5 rounded-full backdrop-blur-sm border border-neutral-800/40">
+                <button class="phone-dot w-2 h-2 rounded-full bg-orange-500 transition-all cursor-pointer" data-index="0" aria-label="Ir para slide 1"></button>
+                <button class="phone-dot w-2 h-2 rounded-full bg-neutral-600 hover:bg-neutral-450 transition-all cursor-pointer" data-index="1" aria-label="Ir para slide 2"></button>
+                <button class="phone-dot w-2 h-2 rounded-full bg-neutral-600 hover:bg-neutral-450 transition-all cursor-pointer" data-index="2" aria-label="Ir para slide 3"></button>
+                <button class="phone-dot w-2 h-2 rounded-full bg-neutral-600 hover:bg-neutral-450 transition-all cursor-pointer" data-index="3" aria-label="Ir para slide 4"></button>
+                <button class="phone-dot w-2 h-2 rounded-full bg-neutral-600 hover:bg-neutral-450 transition-all cursor-pointer" data-index="4" aria-label="Ir para slide 5"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Galeria Interativa das 5 Telas -->
+        <div class="mb-20">
+          <div class="max-w-3xl mb-8">
+            <h2 class="text-white text-2xl sm:text-3xl font-bold mb-3 tracking-tight">Galeria de Telas</h2>
+            <p class="text-neutral-400 text-sm sm:text-base">
+              Abaixo estão as 5 seções fundamentais do aplicativo. Clique em qualquer tela para ampliar e ver em alta qualidade:
+            </p>
+          </div>
+
+          <!-- Grid das Screens -->
+          <div class="grid grid-cols-2 md:grid-cols-5 gap-6">
+            <!-- Tela 1: Início -->
+            <div class="flex flex-col gap-3 group">
+              <div 
+                class="aspect-[9/19] rounded-2xl bg-neutral-900 border border-neutral-800 hover:border-orange-500/40 overflow-hidden cursor-pointer transition-all duration-300 relative group-hover:-translate-y-1 zoom-screenshot-trigger shadow-lg"
+                data-img="./assets/plantei_1.jpg"
+                data-title="Tela Início"
+                data-desc="Painel geral com a visão consolidada da carteira de investimentos, gráficos de evolução patrimonial e resumo rápido do desempenho diário."
+              >
+                <img src="./assets/plantei_1.jpg" alt="Início" class="w-full h-full object-cover" referrerpolicy="no-referrer">
+                <!-- Overlay de Zoom -->
+                <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                  <i data-lucide="zoom-in" class="w-8 h-8 text-orange-400"></i>
+                </div>
+              </div>
+              <div class="text-center">
+                <p class="text-white font-semibold text-sm">1. Início</p>
+                <p class="text-neutral-500 text-xs">Visão Geral & Dashboard</p>
+              </div>
+            </div>
+
+            <!-- Tela 2: Ativos -->
+            <div class="flex flex-col gap-3 group">
+              <div 
+                class="aspect-[9/19] rounded-2xl bg-neutral-900 border border-neutral-800 hover:border-orange-500/40 overflow-hidden cursor-pointer transition-all duration-300 relative group-hover:-translate-y-1 zoom-screenshot-trigger shadow-lg"
+                data-img="./assets/plantei_2.jpg"
+                data-title="Tela de Ativos"
+                data-desc="Área para gerenciar cada investimento individualmente por categoria (Ações, FIIs, Tesouro, Cripto). Acompanhe preço médio e quantidades."
+              >
+                <img src="./assets/plantei_2.jpg" alt="Ativos" class="w-full h-full object-cover" referrerpolicy="no-referrer">
+                <!-- Overlay de Zoom -->
+                <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                  <i data-lucide="zoom-in" class="w-8 h-8 text-orange-400"></i>
+                </div>
+              </div>
+              <div class="text-center">
+                <p class="text-white font-semibold text-sm">2. Ativos</p>
+                <p class="text-neutral-500 text-xs">Gestão da Carteira</p>
+              </div>
+            </div>
+
+            <!-- Tela 3: Metas -->
+            <div class="flex flex-col gap-3 group">
+              <div 
+                class="aspect-[9/19] rounded-2xl bg-neutral-900 border border-neutral-800 hover:border-orange-500/40 overflow-hidden cursor-pointer transition-all duration-300 relative group-hover:-translate-y-1 zoom-screenshot-trigger shadow-lg"
+                data-img="./assets/plantei_3.jpg"
+                data-title="Tela de Metas"
+                data-desc="Defina os percentuais objetivos de alocação de ativos e visualize barras de progresso para guiar seus próximos aportes de forma balanceada."
+              >
+                <img src="./assets/plantei_3.jpg" alt="Metas" class="w-full h-full object-cover" referrerpolicy="no-referrer">
+                <!-- Overlay de Zoom -->
+                <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                  <i data-lucide="zoom-in" class="w-8 h-8 text-orange-400"></i>
+                </div>
+              </div>
+              <div class="text-center">
+                <p class="text-white font-semibold text-sm">3. Metas</p>
+                <p class="text-neutral-500 text-xs">Aporte Inteligente</p>
+              </div>
+            </div>
+
+            <!-- Tela 4: Alertas -->
+            <div class="flex flex-col gap-3 group">
+              <div 
+                class="aspect-[9/19] rounded-2xl bg-neutral-900 border border-neutral-800 hover:border-orange-500/40 overflow-hidden cursor-pointer transition-all duration-300 relative group-hover:-translate-y-1 zoom-screenshot-trigger shadow-lg"
+                data-img="./assets/plantei_4.jpg"
+                data-title="Tela de Alertas"
+                data-desc="Configure alertas de preços mínimos ou máximos para seus ativos monitorados e receba notificações para agir na hora exata."
+              >
+                <img src="./assets/plantei_4.jpg" alt="Alertas" class="w-full h-full object-cover" referrerpolicy="no-referrer">
+                <!-- Overlay de Zoom -->
+                <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                  <i data-lucide="zoom-in" class="w-8 h-8 text-orange-400"></i>
+                </div>
+              </div>
+              <div class="text-center">
+                <p class="text-white font-semibold text-sm">4. Alertas</p>
+                <p class="text-neutral-500 text-xs">Monitor de Preços</p>
+              </div>
+            </div>
+
+            <!-- Tela 5: Configurações -->
+            <div class="flex flex-col gap-3 group">
+              <div 
+                class="aspect-[9/19] rounded-2xl bg-neutral-900 border border-neutral-800 hover:border-orange-500/40 overflow-hidden cursor-pointer transition-all duration-300 relative group-hover:-translate-y-1 zoom-screenshot-trigger shadow-lg"
+                data-img="./assets/plantei_5.jpg"
+                data-title="Tela de Configurações"
+                data-desc="Configurações de privacidade, exportação de dados (backup CSV local), biometria e customização do tema escuro do app."
+              >
+                <img src="./assets/plantei_5.jpg" alt="Configurações" class="w-full h-full object-cover" referrerpolicy="no-referrer">
+                <!-- Overlay de Zoom -->
+                <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                  <i data-lucide="zoom-in" class="w-8 h-8 text-orange-400"></i>
+                </div>
+              </div>
+              <div class="text-center">
+                <p class="text-white font-semibold text-sm">5. Configurações</p>
+                <p class="text-neutral-500 text-xs">Privacidade & Backup</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Grade de Características Técnicas -->
+        <div class="mb-20">
+          <div class="max-w-3xl mb-12">
+            <h2 class="text-white text-2xl sm:text-3xl font-bold mb-3 tracking-tight">Recursos Projetados para Investidores</h2>
+            <p class="text-neutral-400 text-sm sm:text-base">Funcionalidades focadas no que você precisa, sem ruído, sem anúncios.</p>
+          </div>
+
+          <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="bg-neutral-900/40 border border-neutral-800/80 p-6 rounded-2xl">
+              <div class="w-10 h-10 rounded-xl bg-neutral-950 border border-neutral-800 flex items-center justify-center mb-4 text-orange-400">
+                <i data-lucide="shield-check" class="w-5 h-5"></i>
+              </div>
+              <h3 class="text-white font-semibold text-base mb-2">Operação Offline-First</h3>
+              <p class="text-neutral-400 text-xs leading-relaxed">Nenhum dado financeiro ou de transação é transmitido para servidores de terceiros. Sua privacidade é absoluta.</p>
+            </div>
+
+            <div class="bg-neutral-900/40 border border-neutral-800/80 p-6 rounded-2xl">
+              <div class="w-10 h-10 rounded-xl bg-neutral-950 border border-neutral-800 flex items-center justify-center mb-4 text-orange-400">
+                <i data-lucide="bell" class="w-5 h-5"></i>
+              </div>
+              <h3 class="text-white font-semibold text-base mb-2">Alertas Inteligentes</h3>
+              <p class="text-neutral-400 text-xs leading-relaxed">Defina faixas de preço para compra ou venda de ações e FIIs e receba notificações imediatas no celular.</p>
+            </div>
+
+            <div class="bg-neutral-900/40 border border-neutral-800/80 p-6 rounded-2xl">
+              <div class="w-10 h-10 rounded-xl bg-neutral-950 border border-neutral-800 flex items-center justify-center mb-4 text-orange-400">
+                <i data-lucide="target" class="w-5 h-5"></i>
+              </div>
+              <h3 class="text-white font-semibold text-base mb-2">Metas Claras</h3>
+              <p class="text-neutral-400 text-xs leading-relaxed">Planeje aportes estipulando percentuais ideais para cada tipo de ativo, mantendo a carteira sempre equilibrada.</p>
+            </div>
+
+            <div class="bg-neutral-900/40 border border-neutral-800/80 p-6 rounded-2xl">
+              <div class="w-10 h-10 rounded-xl bg-neutral-950 border border-neutral-800 flex items-center justify-center mb-4 text-orange-400">
+                <i data-lucide="percent" class="w-5 h-5"></i>
+              </div>
+              <h3 class="text-white font-semibold text-base mb-2">Rendimentos Mensais</h3>
+              <p class="text-neutral-400 text-xs leading-relaxed">Acompanhe dividendos acumulados e proventos futuros mês a mês com gráficos que facilitam a leitura do progresso.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Seção de Termos de Responsabilidade e Políticas (Play Store requirement) -->
+        <div id="termos-legais" class="scroll-mt-24 pt-12 border-t border-neutral-900 mb-12">
+          <div class="max-w-3xl mb-8">
+            <h2 class="text-white text-2xl sm:text-3xl font-bold mb-3 tracking-tight">Termos & Documentos Legais</h2>
+            <p class="text-neutral-400 text-sm sm:text-base">
+              Como exigido pela Google Play Store para a publicação de aplicativos móveis, disponibilizamos publicamente nossos termos de responsabilidade e política de privacidade para o aplicativo Plantei Ativos.
+            </p>
+          </div>
+
+          <!-- Abas de Navegação dos Documentos -->
+          <div class="flex border-b border-neutral-800 mb-6 gap-2">
+            <button 
+              id="tab-btn-termos" 
+              class="px-5 py-3 border-b-2 border-orange-500 text-white font-semibold text-sm transition-all focus:outline-none cursor-pointer"
+            >
+              Termos de Responsabilidade
+            </button>
+            <button 
+              id="tab-btn-privacidade" 
+              class="px-5 py-3 border-b-2 border-transparent text-neutral-400 hover:text-white font-semibold text-sm transition-all focus:outline-none cursor-pointer"
+            >
+              Política de Privacidade
+            </button>
+          </div>
+
+          <!-- Container do Conteúdo do Documento -->
+          <div class="bg-neutral-900/40 border border-neutral-800/80 rounded-2xl p-6 sm:p-8 relative">
+            <div class="absolute top-4 right-4 flex items-center gap-2 z-10">
+              <button 
+                id="btn-copiar-documento" 
+                class="p-2 rounded-lg bg-neutral-950 border border-neutral-800 hover:border-orange-500/40 text-neutral-400 hover:text-orange-400 transition-all text-xs flex items-center gap-1.5 cursor-pointer"
+                title="Copiar texto"
+              >
+                <i data-lucide="copy" class="w-4 h-4" id="copy-icon"></i>
+                <span id="copy-text" class="hidden sm:inline">Copiar termos</span>
+              </button>
+            </div>
+
+            <!-- Conteúdo dos Termos -->
+            <div id="documento-termos" class="max-w-none text-neutral-300 text-sm leading-relaxed space-y-4 pt-4">
+              <h3 class="text-white font-bold text-lg mb-2">Termos de Responsabilidade e Uso — Plantei Ativos</h3>
+              <p class="text-neutral-500 text-xs">Última atualização: 07 de Agosto de 2026</p>
+              <p>
+                Ao utilizar o aplicativo <strong class="text-white font-medium">Plantei Ativos</strong>, você concorda expressa e integralmente com os termos descritos abaixo. Recomendamos a leitura atenta deste documento antes de iniciar o registro de suas operações financeiras.
+              </p>
+              <h4 class="text-white font-semibold mt-4">1. Natureza Informativa e Não-Recomendação</h4>
+              <p>
+                O Plantei Ativos é uma ferramenta estritamente de organização pessoal, compilação de dados de carteira e simulação de rentabilidade. <strong class="text-orange-400 font-normal">O aplicativo não oferece assessoria, consultoria financeira ou recomendações de compra/venda de ativos financeiros.</strong> Toda e qualquer decisão de investimento tomada pelo usuário é de sua exclusiva responsabilidade.
+              </p>
+              <h4 class="text-white font-semibold mt-4">2. Ausência de Conexão com Instituições Financeiras</h4>
+              <p>
+                O aplicativo opera de forma manual e local. Ele não realiza transações de valores mobiliários, não possui acesso a contas bancárias ou corretoras, e não está integrado automaticamente a plataformas oficiais de negociação (como a B3). Todos os lançamentos devem ser realizados manualmente pelo próprio usuário.
+              </p>
+              <h4 class="text-white font-semibold mt-4">3. Responsabilidade sobre Lançamentos e Dados de Terceiros</h4>
+              <p>
+                As cotações de ações, fundos imobiliários e moedas exibidas no aplicativo são obtidas através de APIs de terceiros com fins meramente estatísticos e podem apresentar atrasos (delay) ou variações em relação ao mercado em tempo real. O desenvolvedor não se responsabiliza por eventuais inconsistências ou prejuízos decorrentes dessas cotações ou de lançamentos incorretos efetuados pelo usuário.
+              </p>
+              <h4 class="text-white font-semibold mt-4">4. Limitação de Responsabilidade</h4>
+              <p>
+                Sob nenhuma circunstância o desenvolvedor ou a Fortunaty Studios serão responsáveis por lucros cessantes, perdas financeiras, investimentos equivocados ou danos indiretos decorrentes do uso do aplicativo.
+              </p>
+            </div>
+
+            <!-- Conteúdo de Privacidade (Escondido inicialmente) -->
+            <div id="documento-privacidade" class="max-w-none text-neutral-300 text-sm leading-relaxed space-y-4 pt-4 hidden">
+              <h3 class="text-white font-bold text-lg mb-2">Política de Privacidade — Plantei Ativos</h3>
+              <p class="text-neutral-500 text-xs">Última atualização: 07 de Agosto de 2026</p>
+              <p>
+                A privacidade dos seus dados financeiros é um pilar fundamental do desenvolvimento do <strong class="text-white font-medium">Plantei Ativos</strong>. Esta política detalha de forma transparente como lidamos com as suas informações.
+              </p>
+              <h4 class="text-white font-semibold mt-4">1. Coleta Zero de Dados Pessoais e Financeiros</h4>
+              <p>
+                O Plantei Ativos <strong class="text-orange-400 font-normal">não coleta, armazena ou transmite nenhum dado financeiro ou de transação</strong> do usuário para servidores externos. Todo o registro de compras, vendas, dividendos, metas e ativos é salvo estritamente de forma local no banco de dados interno do seu smartphone (através do SQLite/Room local ou SharedPreferences cifrado).
+              </p>
+              <h4 class="text-white font-semibold mt-4">2. Ausência de Cadastro e Contas de Usuário</h4>
+              <p>
+                Para utilizar o aplicativo, não é necessário realizar nenhum tipo de cadastro, login, vinculação de e-mail, redes sociais ou CPF. Você pode usar todas as funcionalidades do aplicativo imediatamente de forma totalmente anônima.
+              </p>
+              <h4 class="text-white font-semibold mt-4">3. Permissões Requeridas pelo Aplicativo</h4>
+              <p>
+                O aplicativo pode solicitar apenas as permissões básicas necessárias para o seu funcionamento:
+              </p>
+              <ul class="list-disc pl-5 space-y-1 text-neutral-400">
+                <li><strong>Acesso à Internet:</strong> Necessário exclusivamente para carregar as cotações atualizadas das APIs públicas de mercado.</li>
+                <li><strong>Notificações Push:</strong> Necessário exclusivamente para disparar os alertas de metas de preços criados manualmente por você diretamente no seu dispositivo.</li>
+              </ul>
+              <h4 class="text-white font-semibold mt-4">4. Segurança de Dados</h4>
+              <p>
+                Como seus dados permanecem no seu celular, a segurança física e digital das informações inseridas no aplicativo depende exclusivamente da proteção do seu aparelho móvel (como biometria, senhas e criptografia padrão do sistema Android).
+              </p>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Modal Lightbox para Ampliar Screenshots -->
+    <div 
+      id="lightbox-modal" 
+      class="fixed inset-0 bg-neutral-950/95 z-[200] hidden flex-col items-center justify-center p-4 backdrop-blur-md opacity-0 transition-opacity duration-300"
+    >
+      <button 
+        id="btn-close-lightbox" 
+        class="absolute top-6 right-6 p-2 rounded-xl bg-neutral-900 border border-neutral-800 hover:border-orange-500/40 text-neutral-400 hover:text-orange-500 transition-all focus:outline-none cursor-pointer"
+        aria-label="Fechar zoom"
+      >
+        <i data-lucide="x" class="w-6 h-6"></i>
+      </button>
+      
+      <div class="max-w-md w-full flex flex-col items-center gap-4">
+        <div class="w-full max-h-[80vh] overflow-hidden rounded-3xl border border-neutral-800 bg-neutral-950 shadow-2xl flex items-center justify-center">
+          <img id="lightbox-img" src="" alt="Tela Ampliada" class="max-w-full max-h-[75vh] object-contain" referrerpolicy="no-referrer">
+        </div>
+        <div class="text-center max-w-sm">
+          <p id="lightbox-caption" class="text-white font-semibold text-lg"></p>
+          <p id="lightbox-desc" class="text-neutral-400 text-xs mt-1 leading-relaxed"></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== PLAY INLINE OVERLAY (TOP RUSH CAR) ==================== -->
+    <div 
+      id="overlay-jogar" 
+      class="fixed inset-0 bg-neutral-950 z-[110] overflow-hidden hidden flex flex-col transition-all duration-500 ease-out transform translate-y-full"
+    >
+      <!-- Header Fixo do Jogo (Padding menor em dispositivos móveis) -->
+      <header class="w-full bg-neutral-950/90 backdrop-blur-md border-b border-neutral-900/80 z-50 px-4 sm:px-6 py-2.5 sm:py-4 flex justify-between items-center shrink-0">
+        <button 
+          id="btn-fechar-jogo" 
+          class="inline-flex items-center gap-2 text-neutral-400 hover:text-orange-500 transition-colors font-semibold text-sm cursor-pointer"
+        >
+          <i data-lucide="arrow-left" class="w-5 h-5"></i>
+          <span>Voltar ao Portfólio</span>
+        </button>
+        
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-lg border border-neutral-800 overflow-hidden shrink-0 flex items-center justify-center">
+            <img src="./assets/icone_top_rush_car.jpg" alt="Top Rush Car" class="w-full h-full object-cover rounded-lg scale-110" referrerpolicy="no-referrer">
+          </div>
+          <span class="text-white font-bold text-sm sm:text-base tracking-tight">Top Rush Car</span>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <a 
+            href="https://top-rush-car.vercel.app/" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="inline-flex items-center gap-1.5 bg-neutral-900 border border-neutral-800 text-neutral-300 hover:text-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl text-xs font-semibold transition-all hover:border-orange-500/40"
+          >
+            <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+            <span class="hidden xs:inline">Nova Guia</span>
+            <span class="xs:hidden">Site</span>
+          </a>
+        </div>
+      </header>
+
+      <!-- Container do iFrame que preenche todo o espaço líquido restante -->
+      <main class="flex-1 w-full bg-neutral-950 relative select-none">
+        <!-- Loader / Indicador de Carregamento -->
+        <div id="game-loader" class="absolute inset-0 flex flex-col items-center justify-center bg-neutral-950 z-10 gap-4 transition-opacity duration-500">
+          <div class="w-12 h-12 rounded-full border-4 border-orange-500/20 border-t-orange-500 animate-spin"></div>
+          <p class="text-neutral-400 text-sm font-medium text-center px-4">Carregando corrida, prepare seus reflexos...</p>
+        </div>
+
+        <!-- Área de visualização otimizada: sem bordas em celular, com bordas finas em desktop -->
+        <div id="game-wrapper" class="absolute inset-0 flex items-center justify-center p-0 sm:p-4 md:p-6">
+          <div 
+            id="game-container" 
+            class="relative w-full h-full bg-neutral-900 overflow-hidden shadow-2xl sm:rounded-2xl sm:border sm:border-neutral-800/40 transition-all duration-300"
+          >
+            <!-- O Jogo propriamente dito -->
+            <iframe 
+              id="game-iframe"
+              src=""
+              class="absolute inset-0 w-full h-full border-none z-0 bg-neutral-950"
+              allow="autoplay; gamepad; keyboard;"
+              title="Top Rush Car Gameplay"
+            ></iframe>
+          </div>
+        </div>
+      </main>
+    </div>
 
   </body>
 </html>
