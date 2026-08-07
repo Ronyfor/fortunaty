@@ -1,0 +1,6 @@
+{
+  "name": "Portfólio Minimalista",
+  "description": "Landing page minimalista e modular com foco em projetos.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
