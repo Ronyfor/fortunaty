@@ -1,13 +1,421 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Google AI Studio App</title>
+    <title>Fortunaty Studios</title>
+    
+    <!-- Google Fonts - Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Plus Jakarta Sans', 'sans-serif'],
+            },
+            colors: {
+              neutral: {
+                950: '#0a0a0a',
+              }
+            }
+          }
+        }
+      }
+    </script>
+    
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Estilos customizados e animações -->
+    <link rel="stylesheet" href="/estilos.css">
+    
+    <!-- JavaScript comportamental -->
+    <script src="/script.js" defer></script>
   </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+  <body class="bg-neutral-950 text-neutral-300 antialiased selection:bg-orange-500 selection:text-neutral-950">
+    
+    <!-- Navbar / Header -->
+    <header class="fixed top-0 w-full bg-neutral-950/85 backdrop-blur-md border-b border-neutral-900/80 z-50">
+      <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+        <!-- Logo -->
+        <a href="#home" class="text-white font-bold text-xl tracking-tight flex items-center gap-1.5 group">
+          <span>Fortunaty Studios</span>
+          <span class="w-2 h-2 rounded-full bg-orange-500 group-hover:scale-125 transition-transform duration-300"></span>
+        </a>
+        
+        <!-- Desktop Nav -->
+        <nav class="hidden md:flex items-center gap-8 text-neutral-400 text-sm font-medium">
+          <a href="#home" class="hover:text-orange-500 transition-colors duration-300">Início</a>
+          <a href="#projetos" class="hover:text-orange-500 transition-colors duration-300">Projetos</a>
+          <a href="#sobre" class="hover:text-orange-500 transition-colors duration-300">Sobre</a>
+          <a 
+            href="#contato" 
+            class="px-4 py-2 rounded-lg bg-neutral-900 border border-neutral-800 text-orange-500 font-semibold hover:bg-orange-500 hover:text-white hover:border-orange-500 transition-all duration-300 shadow-sm"
+          >
+            Contato
+          </a>
+        </nav>
+
+        <!-- Hamburguer Button (Mobile Only) -->
+        <button id="mobile-menu-btn" class="md:hidden p-2 text-neutral-400 hover:text-white focus:outline-none" aria-label="Menu Principal">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+
+      <!-- Mobile Dropdown Menu -->
+      <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-neutral-950/95 border-b border-neutral-900 flex-col px-6 py-4 gap-4 text-center">
+        <a href="#home" class="py-2 text-neutral-300 hover:text-orange-500 transition-colors">Início</a>
+        <a href="#projetos" class="py-2 text-neutral-300 hover:text-orange-500 transition-colors">Projetos</a>
+        <a href="#sobre" class="py-2 text-neutral-300 hover:text-orange-500 transition-colors">Sobre</a>
+        <a href="#contato" class="py-2 text-orange-500 font-semibold border border-neutral-800 rounded-lg hover:bg-neutral-900 transition-colors">Contato</a>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-32 pb-16 relative overflow-hidden animate-fade-in">
+      <!-- Glow de fundo laranja suave -->
+      <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-orange-500/5 rounded-full blur-[140px] pointer-events-none"></div>
+
+      <div class="max-w-7xl mx-auto px-6 relative z-10">
+        <div class="max-w-3xl mb-12">
+          <h1 class="text-4xl sm:text-6xl font-extrabold text-white tracking-tight leading-[1.1] mb-6">
+            Fortunaty Studios
+          </h1>
+
+          <p class="text-neutral-300 text-lg sm:text-xl leading-relaxed mb-6 max-w-2xl font-light">
+            Estúdio focado em criar <span class="text-orange-400 font-normal">jogos web envolventes</span> e <span class="text-orange-400 font-normal">aplicativos financeiros inteligentes</span> com design moderno e minimalista.
+          </p>
+        </div>
+
+        <!-- Cards Rápidos de Destaque no Início -->
+        <div class="grid sm:grid-cols-2 gap-4 pt-6 border-t border-neutral-900">
+          <a 
+            href="#top-rush" 
+            class="group p-5 rounded-2xl bg-neutral-900/60 border border-neutral-800/80 hover:border-orange-500/40 transition-all duration-300 flex items-start gap-4"
+          >
+            <div class="w-12 h-12 rounded-xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center text-orange-400 shrink-0 group-hover:scale-110 transition-transform">
+              <i data-lucide="gamepad-2" class="w-6 h-6"></i>
+            </div>
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center justify-between mb-1">
+                <h2 class="text-white font-semibold text-base group-hover:text-orange-400 transition-colors">Top Rush Car</h2>
+                <i data-lucide="arrow-up-right" class="w-4 h-4 text-neutral-500 group-hover:text-orange-400 transition-colors"></i>
+              </div>
+              <p class="text-neutral-400 text-xs leading-relaxed line-clamp-2">
+                Jogo de corrida web endless runner low-poly com missões e recompensas.
+              </p>
+            </div>
+          </a>
+
+          <a 
+            href="#plantei-ativos" 
+            class="group p-5 rounded-2xl bg-neutral-900/60 border border-neutral-800/80 hover:border-orange-500/40 transition-all duration-300 flex items-start gap-4"
+          >
+            <div class="w-12 h-12 rounded-xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center text-orange-400 shrink-0 group-hover:scale-110 transition-transform">
+              <i data-lucide="trending-up" class="w-6 h-6"></i>
+            </div>
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center justify-between mb-1">
+                <h2 class="text-white font-semibold text-base group-hover:text-orange-400 transition-colors">Plantei Ativos</h2>
+                <i data-lucide="arrow-up-right" class="w-4 h-4 text-neutral-500 group-hover:text-orange-400 transition-colors"></i>
+              </div>
+              <p class="text-neutral-400 text-xs leading-relaxed line-clamp-2">
+                App minimalista de gestão de carteira e acompanhamento de rendimentos para mobile.
+              </p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção de Projetos -->
+    <section id="projetos" class="py-20 border-t border-neutral-900 bg-neutral-950/40 relative">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="max-w-3xl mb-16">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-400 text-xs font-semibold mb-4">
+            <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+            <span>Nossas Criações</span>
+          </div>
+          <h2 class="text-white text-3xl sm:text-4xl font-bold mb-4 tracking-tight">
+            Projetos em Destaque
+          </h2>
+          <p class="text-neutral-400 text-base sm:text-lg leading-relaxed">
+            Explorar o balanço dinâmico entre entretenimento focado na web e utilitários modernos focados em usabilidade e design escuro minimalista.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+          
+          <!-- Card de Projeto: Top Rush Car -->
+          <div id="top-rush" class="bg-neutral-900/90 border border-neutral-800/90 rounded-2xl p-6 transition-all duration-300 hover:border-orange-500/50 hover:bg-neutral-900 group orange-glow-hover flex flex-col justify-between scroll-mt-24">
+            <div>
+              <!-- Bloco Visual/Preview (Vídeo de Gameplay em loop) -->
+              <div class="w-full h-52 rounded-xl bg-gradient-to-br from-neutral-950 to-neutral-900 border border-neutral-800 p-4 mb-6 flex flex-col justify-between relative overflow-hidden group-hover:border-neutral-700 transition-colors">
+                
+                <div class="absolute inset-0 w-full h-full z-0 overflow-hidden bg-neutral-950">
+                  <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/20 to-neutral-950/40 z-10 pointer-events-none"></div>
+                  <!-- Vídeo em Loop -->
+                  <video 
+                    src="https://assets.mixkit.co/videos/preview/mixkit-polygon-wireframe-grid-tunnel-31518-large.mp4"
+                    autoplay
+                    loop
+                    muted
+                    playsinline
+                    class="w-full h-full object-cover opacity-60 group-hover:opacity-90 group-hover:scale-105 transition-all duration-700"
+                  ></video>
+                </div>
+                
+                <!-- Overlay Informativo -->
+                <div class="flex justify-between items-center z-10">
+                  <span class="text-xs font-semibold px-2.5 py-1 rounded-md bg-neutral-950/90 border border-orange-500/20 text-orange-400 backdrop-blur-sm">
+                    Jogo de Corrida Web
+                  </span>
+                  <div class="w-9 h-9 rounded-lg bg-neutral-950/90 border border-neutral-800 flex items-center justify-center text-orange-400 group-hover:scale-110 transition-transform backdrop-blur-sm">
+                    <i data-lucide="gamepad-2" class="w-5 h-5"></i>
+                  </div>
+                </div>
+
+                <div class="z-10 flex items-center justify-between w-full mt-auto bg-neutral-950/70 border border-neutral-800/30 rounded-lg p-1.5 px-2.5 backdrop-blur-md">
+                  <span class="text-[10px] font-mono text-neutral-400">
+                    Top Rush • Gameplay
+                  </span>
+                  <span class="text-[9px] font-mono text-orange-400 flex items-center gap-1">
+                    <span class="w-1.5 h-1.5 rounded-full bg-orange-500 animate-pulse"></span>
+                    LIVE PREVIEW
+                  </span>
+                </div>
+              </div>
+
+              <h3 class="text-white text-2xl font-bold mb-3 group-hover:text-orange-400 transition-colors duration-300 flex items-center justify-between">
+                <span>Top Rush Car</span>
+                <i data-lucide="arrow-up-right" class="w-5 h-5 text-neutral-500 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
+              </h3>
+              
+              <p class="text-neutral-400 text-sm leading-relaxed mb-6">
+                Endless runner com visual low-poly limpo e moderno. Serve como o carro-chefe de entretenimento do estúdio Fortunaty, oferecendo corrida ágil e dinâmica diretamente no navegador.
+              </p>
+
+              <!-- Destaques -->
+              <div class="flex flex-wrap gap-2 mb-8">
+                <span class="text-xs bg-neutral-950 border border-neutral-800 text-neutral-400 px-3 py-1 rounded-full">
+                  Performance Máxima
+                </span>
+                <span class="text-xs bg-neutral-950 border border-neutral-800 text-neutral-400 px-3 py-1 rounded-full">
+                  Controles Ágeis
+                </span>
+                <span class="text-xs bg-neutral-950 border border-neutral-800 text-neutral-400 px-3 py-1 rounded-full">
+                  Feedback Tátil
+                </span>
+              </div>
+            </div>
+
+            <a 
+              href="https://top-rush-car.vercel.app/" 
+              target="_blank"
+              rel="noopener noreferrer"
+              class="w-full py-3 bg-neutral-950 border border-neutral-800 hover:border-orange-500/40 text-neutral-300 hover:text-white rounded-xl text-center font-semibold text-sm transition-all duration-300 block"
+            >
+              Jogar na Web (Vercel)
+            </a>
+          </div>
+
+          <!-- Card de Projeto: Plantei Ativos -->
+          <div id="plantei-ativos" class="bg-neutral-900/90 border border-neutral-800/90 rounded-2xl p-6 transition-all duration-300 hover:border-orange-500/50 hover:bg-neutral-900 group orange-glow-hover flex flex-col justify-between scroll-mt-24">
+            <div>
+              <!-- Bloco Visual/Preview (Mockup de smartphone com screenshot) -->
+              <div class="w-full h-52 rounded-xl bg-gradient-to-br from-neutral-950 to-neutral-900 border border-neutral-800 p-4 mb-6 flex flex-col justify-between relative overflow-hidden group-hover:border-neutral-700 transition-colors">
+                
+                <div class="absolute inset-0 w-full h-full z-0 flex items-center justify-center bg-neutral-950/50 p-3 overflow-hidden">
+                  <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-transparent to-transparent z-10 pointer-events-none"></div>
+                  
+                  <!-- Celular Minimalista -->
+                  <div class="w-[140px] h-[220px] rounded-[24px] border-[4px] border-neutral-800 bg-neutral-900 shadow-2xl relative overflow-hidden transform translate-y-4 group-hover:translate-y-2 group-hover:rotate-1 transition-all duration-500 flex flex-col">
+                    <!-- Câmera/Notch -->
+                    <div class="absolute top-1.5 left-1/2 -translate-x-1/2 w-10 h-2 bg-neutral-800 rounded-full z-20"></div>
+                    
+                    <!-- Print do App -->
+                    <img 
+                      src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&w=300&q=80" 
+                      alt="Screenshot de Plantei Ativos"
+                      referrerpolicy="no-referrer"
+                      class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300"
+                    />
+                  </div>
+                </div>
+                
+                <!-- Overlay Informativo -->
+                <div class="flex justify-between items-center z-10">
+                  <span class="text-xs font-semibold px-2.5 py-1 rounded-md bg-neutral-950/90 border border-orange-500/20 text-orange-400 backdrop-blur-sm">
+                    Finanças & Investimentos
+                  </span>
+                  <div class="w-9 h-9 rounded-lg bg-neutral-950/90 border border-neutral-800 flex items-center justify-center text-orange-400 group-hover:scale-110 transition-transform backdrop-blur-sm">
+                    <i data-lucide="trending-up" class="w-5 h-5"></i>
+                  </div>
+                </div>
+
+                <div class="z-10 flex items-center justify-between w-full mt-auto bg-neutral-950/70 border border-neutral-800/30 rounded-lg p-1.5 px-2.5 backdrop-blur-md">
+                  <span class="text-[10px] font-mono text-neutral-400">
+                    Plantei Ativos • Interface
+                  </span>
+                  <span class="text-[9px] font-mono text-orange-400 flex items-center gap-1">
+                    <span class="w-1.5 h-1.5 rounded-full bg-orange-500 animate-pulse"></span>
+                    LIVE PREVIEW
+                  </span>
+                </div>
+              </div>
+
+              <h3 class="text-white text-2xl font-bold mb-3 group-hover:text-orange-400 transition-colors duration-300 flex items-center justify-between">
+                <span>Plantei Ativos</span>
+                <i data-lucide="arrow-up-right" class="w-5 h-5 text-neutral-500 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
+              </h3>
+              
+              <p class="text-neutral-400 text-sm leading-relaxed mb-6">
+                Aplicativo focado em gestão de carteira, análise de rendimentos e organização de ativos financeiros com uma experiência minimalista projetada para dispositivos móveis.
+              </p>
+
+              <!-- Destaques -->
+              <div class="flex flex-wrap gap-2 mb-8">
+                <span class="text-xs bg-neutral-950 border border-neutral-800 text-neutral-400 px-3 py-1 rounded-full">
+                  Gráficos Dinâmicos
+                </span>
+                <span class="text-xs bg-neutral-950 border border-neutral-800 text-neutral-400 px-3 py-1 rounded-full">
+                  Acompanhamento Real
+                </span>
+                <span class="text-xs bg-neutral-950 border border-neutral-800 text-neutral-400 px-3 py-1 rounded-full">
+                  Offline-First
+                </span>
+              </div>
+            </div>
+
+            <a 
+              href="#contato" 
+              class="w-full py-3 bg-neutral-950 border border-neutral-800 hover:border-orange-500/40 text-neutral-300 hover:text-white rounded-xl text-center font-semibold text-sm transition-all duration-300"
+            >
+              Conhecer App Mobile
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção Sobre Nós/Trajetória -->
+    <section id="sobre" class="py-24 border-t border-neutral-900 bg-neutral-950 relative overflow-hidden">
+      <div class="max-w-7xl mx-auto px-6 relative z-10">
+        <div class="max-w-3xl mb-16">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-400 text-xs font-semibold mb-4">
+            <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+            <span>Minha Trajetória</span>
+          </div>
+          <h2 class="text-white text-3xl sm:text-4xl font-bold mb-6 tracking-tight">
+            Sobre Mim
+          </h2>
+          <p class="text-neutral-400 text-lg leading-relaxed">
+            Desenvolvedor e fundador do estúdio Fortunaty, apaixonado por transformar ideias em produtos digitais funcionais. 
+            Combino design minimalista em tons escuros com código performático para criar desde jogos web interativos (como o <strong>Top Rush Car</strong>) até ferramentas de organização financeira focadas no mobile (como o <strong>Plantei Ativos</strong>).
+          </p>
+        </div>
+
+        <!-- Grade de Blocos de Habilidades -->
+        <div class="grid md:grid-cols-3 gap-6">
+          
+          <div class="bg-neutral-900/60 border border-neutral-800/80 p-6 rounded-2xl hover:border-neutral-700 transition-all duration-300 hover:-translate-y-1">
+            <div class="w-10 h-10 rounded-xl bg-neutral-950 border border-neutral-800 flex items-center justify-center mb-4 text-orange-400">
+              <i data-lucide="gamepad-2"></i>
+            </div>
+            <h3 class="text-white font-semibold text-lg mb-2">Game Development</h3>
+            <p class="text-neutral-400 text-sm leading-relaxed">Criação de mecânicas envolventes, físicas interativas e arquiteturas orientadas a performance.</p>
+          </div>
+
+          <div class="bg-neutral-900/60 border border-neutral-800/80 p-6 rounded-2xl hover:border-neutral-700 transition-all duration-300 hover:-translate-y-1">
+            <div class="w-10 h-10 rounded-xl bg-neutral-950 border border-neutral-800 flex items-center justify-center mb-4 text-orange-400">
+              <i data-lucide="line-chart"></i>
+            </div>
+            <h3 class="text-white font-semibold text-lg mb-2">Aplicações Financeiras</h3>
+            <p class="text-neutral-400 text-sm leading-relaxed">Interfaces com foco em dashboards analíticos, gráficos dinâmicos e experiência do usuário fluida.</p>
+          </div>
+
+          <div class="bg-neutral-900/60 border border-neutral-800/80 p-6 rounded-2xl hover:border-neutral-700 transition-all duration-300 hover:-translate-y-1">
+            <div class="w-10 h-10 rounded-xl bg-neutral-950 border border-neutral-800 flex items-center justify-center mb-4 text-orange-400">
+              <i data-lucide="code-2"></i>
+            </div>
+            <h3 class="text-white font-semibold text-lg mb-2">Código Limpo & UI Modular</h3>
+            <p class="text-neutral-400 text-sm leading-relaxed">Construção de componentes reutilizáveis, design de sistemas escuros e desacoplamento de lógica.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção de Contato -->
+    <section id="contato" class="py-24 border-t border-neutral-900 bg-neutral-950/80 relative">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="bg-gradient-to-b from-neutral-900 to-neutral-950 border border-neutral-800 rounded-3xl p-8 sm:p-12 relative overflow-hidden orange-glow-hover">
+          <div class="absolute right-0 bottom-0 w-96 h-96 bg-orange-500/5 rounded-full blur-3xl pointer-events-none"></div>
+
+          <div class="max-w-2xl">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-400 text-xs font-semibold mb-4">
+              <i data-lucide="message-square" class="w-3.5 h-3.5"></i>
+              <span>Vamos Conversar</span>
+            </div>
+            
+            <h2 class="text-white text-3xl sm:text-4xl font-bold mb-4 tracking-tight">
+              Pronto para construir o próximo projeto?
+            </h2>
+            
+            <p class="text-neutral-400 text-base sm:text-lg mb-8 leading-relaxed">
+              Interessado em desenvolver um jogo, um aplicativo de investimentos ou discutir ideias de desenvolvimento? Sinta-se à vontade para enviar uma mensagem.
+            </p>
+
+            <div class="flex flex-wrap items-center gap-4">
+              <a 
+                href="mailto:ronyfortunato@gmail.com" 
+                class="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-neutral-950 font-bold px-6 py-3.5 rounded-xl transition-all duration-300 shadow-lg shadow-orange-500/20 hover:shadow-orange-500/40 hover:scale-[1.02] active:scale-95"
+              >
+                <i data-lucide="mail" class="w-5 h-5"></i>
+                <span>Enviar E-mail</span>
+                <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
+              </a>
+
+              <div class="flex items-center gap-3">
+                <a 
+                  href="https://github.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  class="w-12 h-12 rounded-xl bg-neutral-900 border border-neutral-800 flex items-center justify-center text-neutral-400 hover:text-orange-400 hover:border-orange-500/40 transition-all duration-300"
+                  aria-label="GitHub"
+                >
+                  <i data-lucide="github" class="w-5 h-5"></i>
+                </a>
+                <a 
+                  href="https://linkedin.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  class="w-12 h-12 rounded-xl bg-neutral-900 border border-neutral-800 flex items-center justify-center text-neutral-400 hover:text-orange-400 hover:border-orange-500/40 transition-all duration-300"
+                  aria-label="LinkedIn"
+                >
+                  <i data-lucide="linkedin" class="w-5 h-5"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-16 pt-8 border-t border-neutral-900 flex flex-col sm:flex-row justify-between items-center text-xs text-neutral-500 gap-4">
+          <p>© 2026 - Todos os direitos reservados.</p>
+          <p class="flex items-center gap-1">
+            <span>Desenvolvido com foco em</span>
+            <span class="text-orange-400">Design Minimalista & Performance</span>
+          </p>
+        </div>
+      </div>
+    </section>
+
   </body>
 </html>
-

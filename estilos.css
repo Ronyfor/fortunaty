@@ -1,0 +1,52 @@
+/* estilos.css */
+
+/* Rolagem suave */
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+/* Barra de rolagem personalizada e minimalista */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+::-webkit-scrollbar-thumb {
+  background: #262626;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ea580c;
+}
+
+/* Efeito de brilho laranja ao passar o mouse */
+.orange-glow-hover {
+  transition: all 0.3s ease;
+}
+.orange-glow-hover:hover {
+  box-shadow: 0 10px 30px -10px rgba(234, 88, 12, 0.15);
+  border-color: rgba(234, 88, 12, 0.4) !important;
+}
+
+/* Ajuste de scroll para não ficar atrás do cabeçalho fixo */
+.scroll-mt-24 {
+  scroll-margin-top: 6rem;
+}
+
+/* Animação sutil de fade-in */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
